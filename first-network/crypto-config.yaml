@@ -28,10 +28,10 @@ OrdererOrgs:
 # ---------------------------------------------------------------------------
 PeerOrgs:
   # ---------------------------------------------------------------------------
-  # Org1
+  # Org11
   # ---------------------------------------------------------------------------
-  - Name: Org1
-    Domain: org1.example.com
+  - Name: Org11
+    Domain: org11.example.com
     EnableNodeOUs: true
     # ---------------------------------------------------------------------------
     # "Specs"
@@ -76,14 +76,14 @@ PeerOrgs:
     # Count: The number of user accounts _in addition_ to Admin
     # ---------------------------------------------------------------------------
     Users:
-      Count: 1
+      Count: 2
   # ---------------------------------------------------------------------------
-  # Org2: See "Org1" for full specification
+  # Org22: See "Org11" for full specification
   # ---------------------------------------------------------------------------
-  - Name: Org2
-    Domain: org2.example.com
+  - Name: Org22
+    Domain: org22.example.com
     EnableNodeOUs: true
     Template:
       Count: 2
     Users:
-      Count: 1
+      Count: 3
