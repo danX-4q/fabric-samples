@@ -100,7 +100,7 @@ services:
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:10052
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org22.example.com:10051
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org22.example.com:9051
-      - CORE_PEER_LOCALMSPID=Org2MSP
+      - CORE_PEER_LOCALMSPID=Org22MSP
     volumes:
         - /var/run/:/host/var/run/
         - ../crypto-config/peerOrganizations/org22.example.com/peers/peer1.org22.example.com/msp:/etc/hyperledger/fabric/msp
