@@ -96,6 +96,7 @@ joinChannelWithRetry() {
   PEER=$1
   ORG=$2
   setGlobals $PEER $ORG
+  local org_dn_part="${ORG}${ORG}"
 
   set -x
   peer channel join -b $CHANNEL_NAME.block >&log.txt
@@ -104,13 +105,13 @@ joinChannelWithRetry() {
   cat log.txt
   if [ $res -ne 0 -a $COUNTER -lt $MAX_RETRY ]; then
     COUNTER=$(expr $COUNTER + 1)
-    echo "peer${PEER}.org${ORG} failed to join the channel, Retry after $DELAY seconds"
+    echo "peer${PEER}.org${org_dn_part} failed to join the channel, Retry after $DELAY seconds"
     sleep $DELAY
     joinChannelWithRetry $PEER $ORG
   else
     COUNTER=1
   fi
-  verifyResult $res "After $MAX_RETRY attempts, peer${PEER}.org${ORG} has failed to join channel '$CHANNEL_NAME' "
+  verifyResult $res "After $MAX_RETRY attempts, peer${PEER}.org${org_dn_part} has failed to join channel '$CHANNEL_NAME' "
 }
 
 installChaincode() {
